@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="./index.html"> <img src="./Assests/MainLogo.png" alt="Company Logo" class="company-logo"> </a>
+    
+
+
+<div class="AsminDataContainer hidden" id="addUserContainer">
+
+    <div class="adminNavPanel">
+        <button>Admin Portal</button>
+        <button>Add Users</button>
+        <button>Edit Users</button>
+    </div>
+
+    <div class="subContainer">
+
+            <div class="adminleftPanel">
+                <h1>
+                    <span class="Tone1"> Add  </span> 
+                    <span class="Tone2">  New User </span> 
+                </h1>
+                <p>Adding a new user is an efficient process, ensuring seamless integration into our digital platform. By accurately providing details like email, username, and password, users gain access to resources and services. Accuracy in data input is crucial for maintaining system integrity and security.</p>
+                <button class="adminAddNewUser" onclick="togglePopup()">Add</button>
+            </div>
+
+            <div class="adminUserViewPanel">
+                <h1>
+                    <span class="Tone1"> All  </span> 
+                    <span class="Tone2">  Users </span> 
+                </h1>
+                <p>Adding a new user to a system is a fundamental aspect of user management, enabling organizations to expand their user base and grant access to essential resources. This process involves creating a user profile with unique identifiers such as a username, employee ID, and password. By navigating to the user management section and accessing the "Add New User" feature, administrators can input relevant user details and seamlessly integrate individuals into the system. This streamlined process ensures efficient onboarding and access provisioning, fostering a cohesive and productive digital environment.</p>
+            </div>
+    </div>
+
+    <div class="popup" id="addUserPopup">
+        
+        <form>
+            
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="username">Username</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="department">Department</label><br>
+            <input type="text" id="department" name="department" required><br>
+            <label for="userrole">User Role</label><br>
+            <select id="userrole" name="userrole" required>
+                <option value="">Select Role</option>
+                <option value="Admin">Admin</option>
+                <option value="Manager">User</option>
+                <option value="Employee">Security</option>
+            </select><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit">Add User</button>
+            
+        </form>
+        <button class="closeBtn" onclick="togglePopup()">Cancel</button>
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="AsminDataContainer hidden" id="addVehicleContainer">
+
+    <div class="adminNavPanel">
+        <button>Admin Portal</button>
+        <button>Add Users</button>
+        <button>Edit Users</button>
+    </div>
+
+    <div class="subContainer">
+
+            <div class="adminleftPanel">
+                <h1>
+                    <span class="Tone1"> Add  </span> 
+                    <span class="Tone2">  New Vehicle </span> 
+                </h1>
+                <p>Adding a new user is an efficient process, ensuring seamless integration into our digital platform. By accurately providing details like email, username, and password, users gain access to resources and services. Accuracy in data input is crucial for maintaining system integrity and security.</p>
+                <button class="adminAddNewUser" onclick="togglePopup()">Add</button>
+            </div>
+
+            <div class="adminUserViewPanel">
+                <h1>
+                    <span class="Tone1"> All  </span> 
+                    <span class="Tone2">  Vehicles </span> 
+                </h1>
+                <p>Adding a new user to a system is a fundamental aspect of user management, enabling organizations to expand their user base and grant access to essential resources. This process involves creating a user profile with unique identifiers such as a username, employee ID, and password. By navigating to the user management section and accessing the "Add New User" feature, administrators can input relevant user details and seamlessly integrate individuals into the system. This streamlined process ensures efficient onboarding and access provisioning, fostering a cohesive and productive digital environment.</p>
+            </div>
+    </div>
+
+    <div class="popup" id="addUserPopup">
+        
+        <form>
+            
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="username">Username</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="department">Department</label><br>
+            <input type="text" id="department" name="department" required><br>
+            <label for="userrole">User Role</label><br>
+            <select id="userrole" name="userrole" required>
+                <option value="">Select Role</option>
+                <option value="Admin">Admin</option>
+                <option value="Manager">User</option>
+                <option value="Employee">Security</option>
+            </select><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit">Add User</button>
+            
+        </form>
+        <button class="closeBtn" onclick="togglePopup()">Cancel</button>
+        
+    </div>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+<!--
+    <!--    User Management   -->
+    <div class="container hidden" id="container2">
+        <div class="header">
+            <a href="./AdminPanel.html"><i class="fa fa-chevron-left fa-lg"></i></a>
+            <h1>
+                <span class="Tone1"> User  </span> 
+                <span class="Tone2">  Management </span> 
+            </h1>
+        </div>
+
+        <div class="Tile">
+            <button id="NavAddNewUserBtn">
+                <i class="fas fa-user"></i>
+                Add New User
+            </button>
+        </div>
+        <div class="Tile">
+            <button>
+                <i class="fas fa-edit"></i>
+                Edit User Details
+            </button>
+        </div>
+    </div>
+
+
+    <!--    Vehicle Management   -->
+    <div class="container hidden" id="container3">
+        <div class="header">
+            <a href="./AdminPanel.html"><i class="fa fa-chevron-left fa-lg"></i></a>
+            <h1>
+                <span class="Tone1"> Vehicle  </span> 
+                <span class="Tone2">  Management </span> 
+            </h1>
+        </div>
+
+        <div class="Tile">
+            <button id="NavAddNewVehicle">
+                <i class="fas fa-car"></i>
+                Add New Vehicle
+            </button>
+        </div>
+        <div class="Tile">
+            <button>
+                <i class="fas fa-edit"></i>
+                Edit Vehicle Details
+            </button>
+        </div>
+    </div>
+
+
+    <!--    All Requests   -->
+    <div class="container hidden" id="container4">
+        <div class="header">
+            <a href="./AdminPanel.html"><i class="fa fa-chevron-left fa-lg"></i></a>
+            <h1>
+                <span class="Tone1"> All  </span> 
+                <span class="Tone2">  Requests </span> 
+            </h1>
+        </div>
+
+        <div class="Tile">
+            <button>
+                <i class="fa fa-calendar-plus"></i>
+                Today's Requests
+            </button>
+        </div>
+        <div class="Tile">
+            <button>
+                <i class="fa fa-history"></i>
+                Requests History
+            </button>
+        </div>
+    </div>
+

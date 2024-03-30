@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+ 
+</head>
+<body>
+    <a href="./index.html"> <img src="./Assests/MainLogo.png" alt="Company Logo" class="company-logo"> </a>
+
+    <!--    Main Admin Portal   -->
+    <div class="container" id="container1">
+        <h1>
+            <span class="Tone1"> Admin  </span> 
+            <span class="Tone2">  Portal </span> 
+        </h1>
+
+        <div class="Tile">
+            <button id="userManagementBtn">
+                <i class="fas fa-user-cog"></i>
+                User Management
+            </button>
+        </div>
+        <div class="Tile">
+            <button id="vehicleManagementBtn">
+                <i class="fas fa-car"></i>
+                Vehicle Management
+            </button>
+        </div>
+        <div class="Tile">
+            <button id="requestManagementBtn">
+                <i class="fas fa-list-alt"></i>
+                All Requests
+            </button>
+        </div>
+    </div>
+
+
+
+    <!-- DATA INSERT PART -->
+    <!-- USER -->
+    <div class="AsminDataContainer hidden" id="addUserContainer">
+
+        <div class="adminNavPanel">
+            <button id="NavAdminPortal">Admin Portal</button>
+            <button>Add Users</button>
+            <button>Edit Users</button>
+        </div>
+    
+        <div class="subContainer">
+    
+                <div class="adminleftPanel">
+                    <h1>
+                        <span class="Tone1"> Add  </span> 
+                        <span class="Tone2">  New User </span> 
+                    </h1>
+                    <p>Adding a new user is an efficient process, ensuring seamless integration into our digital platform. By accurately providing details like email, username, and password, users gain access to resources and services. Accuracy in data input is crucial for maintaining system integrity and security.</p>
+                    <button class="adminAddNewUser" onclick="togglePopup()">Add</button>
+                </div>
+    
+                <div class="adminUserViewPanel">
+                    <h1>
+                        <span class="Tone1"> All  </span> 
+                        <span class="Tone2">  Users </span> 
+                    </h1>
+                    <p>Adding a new user to a system is a fundamental aspect of user management, enabling organizations to expand their user base and grant access to essential resources. This process involves creating a user profile with unique identifiers such as a username, employee ID, and password. By navigating to the user management section and accessing the "Add New User" feature, administrators can input relevant user details and seamlessly integrate individuals into the system. This streamlined process ensures efficient onboarding and access provisioning, fostering a cohesive and productive digital environment.</p>
+                </div>
+        </div>
+    
+        <div class="popup" id="addUserPopup">
+            
+            <form>
+                
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="username">Username</label><br>
+                <input type="text" id="username" name="username" required><br>
+                <label for="department">Department</label><br>
+                <input type="text" id="department" name="department" required><br>
+                <label for="userrole">User Role</label><br>
+                <select id="userrole" name="userrole" required>
+                    <option value="">Select Role</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Manager">User</option>
+                    <option value="Employee">Security</option>
+                </select><br>
+                <label for="password">Password</label><br>
+                <input type="password" id="password" name="password" required><br>
+                <button type="submit">Add User</button>
+                
+            </form>
+            <button class="closeBtn" onclick="togglePopup()">Cancel</button>
+            
+        </div>
+    </div>
+    
+    
+    
+    <!-- VEHICLE -->
+    
+    <div class="AsminDataContainer hidden" id="addVehicleContainer">
+    
+        <div class="adminNavPanel">
+            <button id="NavAdminPortal1">Admin Portal</button>
+            <button>Add Vehicle</button>
+            <button>Edit Vehicle</button>
+        </div>
+    
+        <div class="subContainer">
+    
+                <div class="adminleftPanel">
+                    <h1>
+                        <span class="Tone1"> Add  </span> 
+                        <span class="Tone2">  New Vehicle </span> 
+                    </h1>
+                    <p>Adding a new user is an efficient process, ensuring seamless integration into our digital platform. By accurately providing details like email, username, and password, users gain access to resources and services. Accuracy in data input is crucial for maintaining system integrity and security.</p>
+                    <button class="adminAddNewUser" onclick="togglePopup()">Add</button>
+                </div>
+    
+                <div class="adminUserViewPanel">
+                    <h1>
+                        <span class="Tone1"> All  </span> 
+                        <span class="Tone2">  Vehicles </span> 
+                    </h1>
+                    <p>
+                        Adding a new vehicle is an efficient process, ensuring seamless integration into our fleet management system. By accurately providing details like vehicle type, vehicle number, and model, administrators can efficiently register vehicles for organizational use. Accuracy in data input is crucial for maintaining accurate records and ensuring operational efficiency and safety.</p>
+                </div>
+        </div>
+    
+        <div class="popup" id="addVehiclePopup">
+            
+            <form>
+                
+                <label for="vehicleNo">Vehicle No</label><br>
+                <input type="text" id="vehicleNo" name="vehicleNo" required><br>
+                <label for="vehicleName">Vehicle Name</label><br>
+                <input type="text" id="vehicleName" name="vehicleName" required><br>
+                <label for="userrole">Vehicle Type</label><br>
+                <select id="vehicleType" name="vehicleType" required>
+                    <option value="">Select Vehicle Type</option>
+                    <option value="Admin">Car</option>
+                    <option value="Manager">Van</option>
+                    <option value="Employee">Bus</option>
+                </select><br>
+                <label for="driverNIC">Driver NIC</label><br>
+                <input type="text" id="driverNIC" name="driverNIC" required><br>
+                <label for="driverName">Driver Name</label><br>
+                <input type="text" id="driverName" name="driverName" required><br>
+                <button type="submit">Add Vehicle</button>
+                
+            </form>
+            <button class="closeBtn" onclick="togglePopup()">Cancel</button>
+            
+        </div>
+    </div>
+    
+
+   <!-- REQUESTS -->
+
+   <div class="AsminDataContainer hidden" id="requestsContainer">
+    
+    <div class="adminNavPanel">
+        <button id="NavAdminPortal2">Admin Portal</button>
+        <button>Today's Requests</button>
+        <button>Requests History</button>
+    </div>
+
+    <div class="subContainer">
+
+
+
+            <div class="adminReportViewPanel">
+                <h1>
+                    <span class="Tone1"> Today's  </span> 
+                    <span class="Tone2">  Requests </span> 
+                </h1>
+               
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Request ID</th>
+                            <th>Requestor</th>
+                            <th>Check Out</th>
+                            <th>Check In</th>
+                            <th>Vehicle No</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GPID 0000120</td>
+                            <td>user1@hemas.com</td>
+                            <td>30/03/2024 10:00</td>
+                            <td>30/03/2024 15:20</td>
+                            <td>CAV-0512</td>
+                        </tr>
+                        <tr>
+                            <td>GPID 0000121</td>
+                            <td>user2@hemas.com</td>
+                            <td>30/03/2024 11:00</td>
+                            <td>30/03/2024 14:20</td>
+                            <td>KC-7852</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+    </div>
+
+</div>
+
+
+
+
+
+<script src="./script.js"></script>
+</body>
+</html>
