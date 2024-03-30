@@ -18,13 +18,12 @@ document.getElementById("requestManagementBtn").addEventListener("click", functi
 */
 
 
-
 /****** POPUP ***** */
 function togglePopup() {
     var popup = document.getElementById("addUserPopup");
     popup.style.display = (popup.style.display === "none") ? "block" : "none";
 }
-function togglePopup() {
+function togglePopup2() {
     var popup = document.getElementById("addVehiclePopup");
     popup.style.display = (popup.style.display === "none") ? "block" : "none";
 }
@@ -53,6 +52,12 @@ document.getElementById("requestManagementBtn").addEventListener("click", functi
     document.getElementById("requestsContainer").classList.remove("hidden");
 
 });
+
+
+
+
+
+
 
 document.getElementById("NavAdminPortal").addEventListener("click", function(event) {
     window.location.href = "AdminPanel.html";
