@@ -68,3 +68,9 @@ document.getElementById("NavAdminPortal1").addEventListener("click", function(ev
 document.getElementById("NavAdminPortal2").addEventListener("click", function(event) {
     window.location.href = "AdminPanel.html";
 });
+
+
+/*  FILTER  PANEL   */
+function printTable1() {
+    window.print();
+}

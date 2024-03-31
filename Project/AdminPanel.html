@@ -177,7 +177,14 @@
                     <span class="Tone1"> Today's  </span> 
                     <span class="Tone2">  Requests </span> 
                 </h1>
-               
+               <div class="filters">
+                <input type="text" id="filterRequestId" placeholder="Request ID">
+                <input type="text" id="filterRequestor" placeholder="Requestor">
+                <input type="text" id="filterVehicleNo" placeholder="Vehicle No">
+                <button onclick="filterTable1()">Apply</button>
+                <button onclick="resetFilters1()">Clear</button>
+                <button onclick="printTable1()">Print</button>
+               </div>
                 <table>
                     <thead>
                         <tr>
