@@ -342,5 +342,35 @@ tr:nth-child(even) {
 
 .buttonlayout{
     display: flex;
-    margin-bottom: 20px;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 600px;
+}
+.buttonlayout button{
+width: 280px;
+margin: auto;
+
+}
+
+/* FILTER */
+.filters{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 15px;
+
+}
+
+.filters input{
+    width: 350px;
+    height: 30px;
+    margin-left: 10px;
+    font-size: 13px;
+}
+.filters button{
+    width: 100px;
+    margin-left: 5px;
+    height: 35px;
+    padding: 0;
+    font-size: 13px;
 }

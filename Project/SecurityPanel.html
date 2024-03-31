@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gate Pass System - HEMAS Holdings Pvt Ltd.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+ 
+</head>
+<body>
+    <a href="./index.html"> <img src="./Assests/MainLogo.png" alt="Company Logo" class="company-logo"> </a>
+
+
+
+    <!-- CHECK REQUEST -->
+
+    <div class="AsminDataContainer" id="checkRequest">
+
+        <div class="userNavPanel">
+                <button id="checkRequestBtn">Check Request</button>
+            <button id="pendingBtn">Pending</button>
+            <button id="completedBtn">Completed</button>
+        </div>
+    
+        <div class="subContainer">
+                <div class="UserRequestViewPanel">
+                    <h1>
+                        <span class="Tone1"> Check   </span> 
+                        <span class="Tone2">  Request </span> 
+                    </h1>
+                    <div class="RequestForm">
+                        <form>
+                            <label for="vehicleCode">Vehicle Code</label><br>
+                            <input type="text" id="vehicleCode" name="vehicleCode" required><br><br>
+                        
+                            <label for="status">Status</label><br>
+                            <select id="status" name="status" required>
+                                <option value="">-</option>
+                                <option value="Personal">Check-In</option>
+                                <option value="Official">Check-Out</option>
+                            </select><br><br>
+                        
+                        <div class="buttonlayout">
+                            <button type="submit">Submit</button>
+                            <button type="button" onclick="clearForm()">Clear</button>
+                        </div>
+
+                        </form>
+                        
+                    </div>
+                </div>
+        </div>
+    
+
+    </div>
+    
+    
+    <!-- PENDING REQUESTS -->
+    
+    <div class="AsminDataContainer hidden" id="pendingRequest">
+    
+        <div class="userNavPanel">
+        <button id="checkRequestBtn2">Check Request</button>
+            <button id="pendingBtn2">Pending</button>
+        <button id="completedBtn2">Completed</button>
+        </div>
+
+        <div class="subContainer">
+
+
+
+            <div class="adminReportViewPanel">
+                <h1>
+                    <span class="Tone1"> Pending  </span> 
+                    <span class="Tone2">  Requests </span> 
+                </h1>
+               
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Request ID</th>
+                            <th>Requestor</th>
+                            <th>Check Out</th>
+                            <th>Check In</th>
+                            <th>Vehicle No</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GPID 0000120</td>
+                            <td>user1@hemas.com</td>
+                            <td>30/03/2024 10:00</td>
+                            <td></td>
+                            <td>CAV-0512</td>
+                        </tr>
+                        <tr>
+                            <td>GPID 0000121</td>
+                            <td>user2@hemas.com</td>
+                            <td>30/03/2024 11:00</td>
+                            <td></td>
+                            <td>KC-7852</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+         </div>
+    </div>
+
+
+    <!-- COMPLETED REQUESTS -->
+
+    <div class="AsminDataContainer hidden" id="completedRequest">
+
+        <div class="userNavPanel">
+        <button id="checkRequestBtn3">Check Request</button>
+        <button id="pendingBtn3">Pending</button>
+            <button id="completedBtn3">Completed</button>
+            </div>
+
+        <div class="subContainer">
+
+
+
+            <div class="adminReportViewPanel">
+                <h1>
+                    <span class="Tone1"> Completed  </span> 
+                    <span class="Tone2">  Requests </span> 
+                </h1>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Request ID</th>
+                            <th>Requestor</th>
+                            <th>Check Out</th>
+                            <th>Check In</th>
+                            <th>Vehicle No</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GPID 0000120</td>
+                            <td>user1@hemas.com</td>
+                            <td>30/03/2024 10:00</td>
+                            <td>30/03/2024 15:20</td>
+                            <td>CAV-0512</td>
+                        </tr>
+                        <tr>
+                            <td>GPID 0000121</td>
+                            <td>user2@hemas.com</td>
+                            <td>30/03/2024 11:00</td>
+                            <td>30/03/2024 14:20</td>
+                            <td>KC-7852</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            </div>
+    </div>
+
+    
+
+
+
+
+<script src="./SecuScript.js">  </script>
+</body>
+</html>
