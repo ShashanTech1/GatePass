@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <td>${row.Requestor}</td>
                         <td>${row.CheckOutTime}</td>
                         <td>${row.CheckInTime}</td>
-                        <td>${row.VehicleID}</td>
+                        <td>${row.VehicleNo}</td>
                         <td>${row.ReasonCategory}</td>
                     `;
                     tableBody.appendChild(newRow);
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <td>${row.Requestor}</td>
                         <td>${row.CheckOutTime}</td>
                         <td>${row.CheckInTime}</td>
-                        <td>${row.VehicleID}</td>
+                        <td>${row.VehicleNo}</td>
                         <td>${row.ReasonCategory}</td>
                     `;
                     tableBody.appendChild(newRow);
