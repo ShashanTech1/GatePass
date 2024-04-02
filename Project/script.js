@@ -70,7 +70,62 @@ document.getElementById("NavAdminPortal2").addEventListener("click", function(ev
 });
 
 
-/*  FILTER  PANEL   */
+//PRINT
 function printTable1() {
     window.print();
 }
+
+// DATA VIEW
+document.addEventListener("DOMContentLoaded", function() {
+    fetchData();
+    // USER DATA
+    function fetchData() {
+        fetch('adminUserData.php')
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.getElementById('userDataTable');
+            data.forEach(row => {
+            
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                        <td>${row.Email}</td>
+                        <td>${row.UserName}</td>
+                        <td>${row.UserRole}</td>
+                        <td>${row.Department}</td>
+                    `;
+                    tableBody.appendChild(newRow);
+            
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    }
+
+});
+
+
+// DATA VIEW
+document.addEventListener("DOMContentLoaded", function() {
+    fetchData();
+    // USER DATA
+    function fetchData() {
+        fetch('adminVehicleData.php')
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.getElementById('vehicleDataTable');
+            data.forEach(row => {
+            
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                        <td>${row.VehicleNo}</td>
+                        <td>${row.VehicleType}</td>
+                        <td>${row.Driver}</td>
+                        <td>${row.DriverNIC}</td>
+                    `;
+                    tableBody.appendChild(newRow);
+            
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    }
+
+});
