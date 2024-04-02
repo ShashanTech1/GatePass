@@ -66,24 +66,13 @@
                         <span class="Tone1"> All  </span> 
                         <span class="Tone2">  Users </span> 
                     </h1>
-                    <table class="adminTable">
-                        <thead>
-                            <tr>
-                                <th>Email</th>
-                                <th>Username</th>
-                                <th>User role</th>
-                                <th>Department</th>                                
-                            </tr>
-                        </thead>
-                        <tbody id="userDataTable">
-                        </tbody>
-                    </table>
+                    <p>Adding a new user to a system is a fundamental aspect of user management, enabling organizations to expand their user base and grant access to essential resources. This process involves creating a user profile with unique identifiers such as a username, employee ID, and password. By navigating to the user management section and accessing the "Add New User" feature, administrators can input relevant user details and seamlessly integrate individuals into the system. This streamlined process ensures efficient onboarding and access provisioning, fostering a cohesive and productive digital environment.</p>
                 </div>
         </div>
     
         <div class="popup" id="addUserPopup">
             
-            <form>
+            <form action="AddUser.php" method="POST">
                 
                 <label for="email">Email</label><br>
                 <input type="email" id="email" name="email" required><br>
@@ -95,8 +84,8 @@
                 <select id="userrole" name="userrole" required>
                     <option value="">Select Role</option>
                     <option value="Admin">Admin</option>
-                    <option value="Manager">User</option>
-                    <option value="Employee">Security</option>
+                    <option value="Security">User</option>
+                    <option value="User">Security</option>
                 </select><br>
                 <label for="password">Password</label><br>
                 <input type="password" id="password" name="password" required><br>
@@ -136,24 +125,14 @@
                         <span class="Tone1"> All  </span> 
                         <span class="Tone2">  Vehicles </span> 
                     </h1>
-                    <table class="adminTable">
-                        <thead>
-                            <tr>
-                                <th>Vehicle No</th>
-                                <th>Vehicle</th>
-                                <th>Name of Driver</th>
-                                <th>NIC of Driver</th>                                
-                            </tr>
-                        </thead>
-                        <tbody id="vehicleDataTable">
-                        </tbody>
-                    </table>
+                    <p>
+                        Adding a new vehicle is an efficient process, ensuring seamless integration into our fleet management system. By accurately providing details like vehicle type, vehicle number, and model, administrators can efficiently register vehicles for organizational use. Accuracy in data input is crucial for maintaining accurate records and ensuring operational efficiency and safety.</p>
                 </div>
         </div>
     
         <div class="popup" id="addVehiclePopup">
             
-            <form>
+            <form action="AddVehicle.php" method="POST">
                 
                 <label for="vehicleNo">Vehicle No</label><br>
                 <input type="text" id="vehicleNo" name="vehicleNo" required><br>
@@ -198,14 +177,14 @@
                     <span class="Tone1"> Today's  </span> 
                     <span class="Tone2">  Requests </span> 
                 </h1>
-               <div class="filters">
-                <input type="text" id="filterRequestId" placeholder="Request ID">
-                <input type="text" id="filterRequestor" placeholder="Requestor">
-                <input type="text" id="filterVehicleNo" placeholder="Vehicle No">
-                <button onclick="filterTable1()">Apply</button>
-                <button onclick="resetFilters1()">Clear</button>
-                <button onclick="printTable1()">Print</button>
-               </div>
+                <div class="filters">
+                    <input type="text" id="filterRequestId" placeholder="Request ID">
+                    <input type="text" id="filterRequestor" placeholder="Requestor">
+                    <input type="text" id="filterVehicleNo" placeholder="Vehicle No">
+                    <button onclick="filterTable1()">Apply</button>
+                    <button onclick="resetFilters1()">Clear</button>
+                    <button onclick="printTable1()">Print</button>
+                   </div>
                 <table>
                     <thead>
                         <tr>

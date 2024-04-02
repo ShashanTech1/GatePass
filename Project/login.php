@@ -1,42 +1,68 @@
 <?php
-// Check if the form is submitted
-if (isset($_GET["username"]) && isset($_GET["password"])) {
-    // Connect to your MySQL database
-    $conn = mysqli_connect("localhost", "username", "password", "database_name");
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-    // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+$servername = "localhost";
+$username = "WebUser";
+$password = "12345678";
+$dbname = "gatepass";
 
-    // Retrieve user input
-    $username = $_GET['username'];
-    $password = $_GET['password'];
 
-    // Validate user input
-    if (empty($username) || empty($password)) {
-        echo "Please enter both username and password.";
-    } else {
-        // Query the database
-        $sql = "SELECT * FROM users WHERE username = '$username'";
-        $result = mysqli_query($conn, $sql);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-        if (mysqli_num_rows($result) == 1) {
-            // Verify credentials
-            $row = mysqli_fetch_assoc($result);
-            if (password_verify($password, $row['password'])) {
-                // Start session and set session variables
-                session_start();
-                $_SESSION['username'] = $username;
-                // Redirect to secured page
-                header("Location: secured_page.php");
-                exit();
-            } else {
-                echo "Invalid username or password.";
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+  
+    $stmt = $conn->prepare("SELECT * FROM userdetails WHERE UserName = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+        $stored_hashed_password = $row['PasswordHash'];
+
+
+        if (password_verify($password, $stored_hashed_password)) {
+            $role = $row['UserRole']; 
+            switch ($role) {
+                case 'Admin':
+                    header("Location: adminPanel.html");
+                    break;
+                case 'Security':
+                    header("Location: securityPanel.html");
+                    break;
+                case 'User':
+                    header("Location: userPanel.php");
+                    break;
+                case 'Manager':
+                        header("Location: userPanel.php");
+                        break;
+                default:
+                    echo "Invalid user role.";
             }
+            exit;
         } else {
             echo "Invalid username or password.";
         }
+    } else {
+        echo "Invalid username or password.";
     }
+
+
+    $stmt->close();
+} else {
+    header("Location: index.html");
+    exit;
 }
+
+
+$conn->close();
 ?>
